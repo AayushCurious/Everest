@@ -56,16 +56,17 @@
     <script src="index.js"></script>
     <script src="js/metamask.js"></script>
     <script>
-        const bet=1000
+
+        var bet=1000;
+        var BJgame=1000;
         // console.log(bet)
-        console.log(JSON.stringify(Object.values(BJgame)[0].score))
-        var total_earning=bet/10+parseInt(Math.random()*(parseInt(Math.random()*1000)))
+        // console.log(JSON.stringify(Object.values(BJgame)[0].score))
+        var total_earning=bet/10+parseInt(Math.random()*(parseInt(Math.random()*1000)))+BJgame;
       //bet is of baccarat// ;
         var trigger=document.getElementById("trigger");
       window.onload = function()
       {
       var trigger=document.getElementById("trigger");
-      document.getElementById("USD").innerHTML="<h6>Earnings🪙:</h6><br>$"+total_earning.toUpperCase();
       trigger.checked=true;
       connect();
       document.getElementById("uid").innerHTML="<h6>Wallet Not Connected🐺</h6>"
@@ -82,7 +83,10 @@
        const x=await window.ethereum.request({ method: "eth_requestAccounts" })
        console.log(x[0])
        document.getElementById("uid").innerHTML="<h6>Wallet Address🐺:</h6>"+x[0]
-       document.getElementById("uid2").innerHTML="<h6>Gamer ID🎮:</h6>"+x[0].substr(12,15).toUpperCase()
+       document.getElementById("uid2").innerHTML="<h6>Gamer ID🎮:</h6>"+x[0].substr(12,15).toUpperCase();
+       document.getElementById("XY").innerHTML="<h6>Earnings🪙:</h6><br>$"+total_earning+''.toUpperCase();
+
+
         }
         else
        {
@@ -138,15 +142,15 @@ const analytics = getAnalytics(app);
                 </a>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Home</a>
-                    <a href="MainFolder/Roulette/javascript-roulette/index.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Casino</a>
-                    <a href="MainFolder/Casiono 1(Roulette)/Casiono/Casiono.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>Slot</a>
-                    <a href="MainFolder/lucky-slot-game/src/index.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Lottery</a>
+                    <a href="MainFolder/Roulette/javascript-roulette/index.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Roulette</a>
+                    <a href="MainFolder/lucky-slot-game/src/index.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>Slot</a>
+                    <a href="Wheel Of Fortune 1/Java -Wheel Of Fortune/index.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Fortune</a>
                 </div>
                 <div style="width:100%;background-color: #018FF9;margin-left: 5%;margin-top: 5%;border-radius: 5px;border-color: 3px solid white;">
                     <h5>Gamer Portal</h5><br>
                      <li id="uid" style="font-size: xx-small; list-style: none;"></li><br>
                      <li id="uid2" style="font-size:medium; list-style: none;"></li><br>
-                     <li id="USD" style="font-size:x-small; list-style: none;"></li><br>
+                     <li id="XY" style="font-size:x-large; list-style: none;"></li><br>
                      <a href="#"><div id="boa" class="boa" style="background-color: rgb(181, 77, 226); margin:3%;text-align: center;border-radius: 10px;"><h3>Cash Out!</h3></div></a>
                 </div>
             </nav>
